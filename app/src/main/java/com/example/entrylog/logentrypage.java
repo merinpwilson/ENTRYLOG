@@ -1,6 +1,7 @@
 package com.example.entrylog;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -21,6 +22,7 @@ public class logentrypage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_logentrypage);
+
         e1=(EditText) findViewById(R.id.name);
         e2=(EditText) findViewById(R.id.admno);
         e3=(EditText) findViewById(R.id.sysno);
@@ -44,6 +46,10 @@ public class logentrypage extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences=getSharedPreferences("logapp",MODE_PRIVATE);
+                SharedPreferences.Editor editor= preferences.edit();
+                editor.clear();
+                editor.apply();
                 Intent i=new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(i);
             }
