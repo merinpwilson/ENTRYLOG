@@ -1,6 +1,7 @@
 <LinearLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:padding="90px"
     android:gravity="center"
     android:background="#4F6C6F"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -23,7 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter password"
-        android:id="@+id/pass"/>
+        android:id="@+id/pass"
+        android:inputType="textPassword"/>
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
